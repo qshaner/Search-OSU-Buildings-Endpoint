@@ -25,7 +25,7 @@ class CardGrid extends Component {
 
     getInfoAsCardArray() {
         let cardArray = []
-        console.log("categories Card: ", this.props.results[4].categories[0].name)
+      //  console.log("categories Card: ", this.props.results[4].categories[0].name)
 
 if(this.props.results.length==1){
   // console.log("single card: ", this.props.results) 
