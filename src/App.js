@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './App.css'
-//import jsonData from './components/buildings'
 import SearchBar from './components/searchBar';
 import FilterList from './components/filterList';
 import { filterResults } from './helpers/FilterResults';
@@ -42,7 +41,6 @@ the names of the buildings
 
 async componentDidMount() {
   console.log('Success!');
-  //this.setState({buildings: jsonData});
 
   await axios.get(`https://content.osu.edu/v2/buildings`)
   .then(res => {
@@ -70,15 +68,6 @@ return results;
 }
 
 populateArray(){
-  //const length = jsonData.data.buildings.length;
-  //console.log('length: ', length)
-  //let dataAsArray= [];
-
-  //let i = 0;
-//while(i<length-1){
-  //dataAsArray.push(jsonData.data.buildings[i])
-//i++;
-//}
 
 const length2 = this.state.buildings.length;
 console.log('length2: ', length2);
