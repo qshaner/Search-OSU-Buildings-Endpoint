@@ -1,27 +1,27 @@
 import React, {Component} from 'react'
 import propTypes from 'prop-types'
-import jsonData from './buildings';
 import BuildingCard from './buildingCard';
-
-function populateArray(){
-    const length = jsonData.data.buildings.length;
-    console.log('length: ', length)
-    let dataAsArray= [];
-  
-    let i = 0;
-
-      while(i<length-1){
-    dataAsArray.push(jsonData.data.buildings[i])
-  i++;
-  }
-  console.log('Array Data: ',dataAsArray)
-  
-  return dataAsArray;
-  }
-
 
 
 class CardGrid extends Component {
+
+
+    populateArray(){
+        const length2 = this.props.endpointData.length;
+        console.log('length2: ', length2);
+        console.log("first element endpoint: ", this.props.endpointData[0])
+         let i = 0;
+         let endpointAsArray = [];
+        while(i<length2){
+        endpointAsArray.push(this.props.endpointData[i])
+        i++;
+        }
+        
+        console.log('Endpoint Array Data', endpointAsArray);
+        
+        return endpointAsArray;
+        }
+      
 
     getInfoAsCardArray() {
         let cardArray = []
@@ -92,11 +92,12 @@ else {
 
 CardGrid.propTypes = {
     results: propTypes.array.isRequired,
-    searchText: propTypes.string
+    searchText: propTypes.string,
+    endpointData: propTypes.array.isRequired
 }
 
 CardGrid.defaultProps = {
-    results: populateArray(), 
+    //: this.populateArray(), 
 }
 
 const column = {
